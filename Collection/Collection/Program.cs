@@ -11,6 +11,15 @@ namespace Collection
             binarySearch.Insert(50);
             binarySearch.Insert(48);
             binarySearch.Insert(79);
+            binarySearch.Insert(45);
+            binarySearch.Insert(36);
+            binarySearch.Insert(84);
+            binarySearch.Insert(09);
+            binarySearch.Insert(69);
+            binarySearch.Insert(44);
+            binarySearch.Insert(66);
+            binarySearch.Insert(52);
+            binarySearch.Insert(94);
             binarySearch.Display();
             binarySearch.GetSize();
         }
