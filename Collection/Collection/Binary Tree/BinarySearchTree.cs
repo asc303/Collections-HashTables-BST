@@ -9,7 +9,7 @@ namespace Collection
         public T NodeData { get; set; }
         public BinarySearchTree<T> LeftTree { get; set; }
         public BinarySearchTree<T> RightTree { get; set; }
-        public BinarySearchTree(T nodeData) 
+        public BinarySearchTree(T nodeData)
         {
             this.NodeData = nodeData;
             this.LeftTree = null;
@@ -17,7 +17,7 @@ namespace Collection
         }
         int leftCount = 0, rightCount = 0;
         bool result = false;
-        public void Insert (T item) 
+        public void Insert(T item)
         {
             T currentNodeValue = this.NodeData;
             if (currentNodeValue.CompareTo(item) > 0)
@@ -30,12 +30,12 @@ namespace Collection
             else
             {
                 if (this.RightTree == null)
-                this.RightTree = new BinarySearchTree<T>(item);
-                 else
+                    this.RightTree = new BinarySearchTree<T>(item);
+                else
                     this.RightTree.Insert(item);
             }
         }
-        public void Display() 
+        public void Display()
         {
             if (this.LeftTree != null)
             {
@@ -49,11 +49,11 @@ namespace Collection
                 this.RightTree.Display();
             }
         }
-        public void GetSize() 
+        public void GetSize()
         {
-            Console.WriteLine("Size"+" "+(1+ this.leftCount + this.rightCount));
+            Console.WriteLine("Size" + " " + (1 + this.leftCount + this.rightCount));
         }
-        public bool IfExists(T element, BinarySearchTree<T> node) 
+        public bool IfExists(T element, BinarySearchTree<T> node)
         {
             if (node == null)
             {
@@ -61,7 +61,7 @@ namespace Collection
             }
             if (node.NodeData.Equals(element))
             {
-                Console.WriteLine("Found the Element in Binary Search Tree" + " " +node.NodeData);
+                Console.WriteLine("Found the Element in Binary Search Tree" + " " + node.NodeData);
                 result = true;
             }
             else

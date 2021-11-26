@@ -15,17 +15,17 @@ namespace Collection
         private readonly LinkedList<KeyValue<K, V>>[] items;
 
 
-        public MyMapNode (int size) 
+        public MyMapNode(int size)
         {
             this.size = size;
             this.items = new LinkedList<KeyValue<K, V>>[size];
         }
-        protected int GetArrayPosition(K key) 
+        protected int GetArrayPosition(K key)
         {
             int position = key.GetHashCode() % size;
             return Math.Abs(position);
         }
-        public V Get(K key) 
+        public V Get(K key)
         {
             int position = GetArrayPosition(key);
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
@@ -38,14 +38,14 @@ namespace Collection
             }
             return default(V);
         }
-        public void Add (K key, V value) 
+        public void Add(K key, V value)
         {
             int position = GetArrayPosition(key);
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
             KeyValue<K, V> item = new KeyValue<K, V>() { key = key, value = value };
             linkedList.AddLast(item);
         }
-        public void Remove (K key) 
+        public void Remove(K key)
         {
             int position = GetArrayPosition(key);
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
@@ -64,7 +64,7 @@ namespace Collection
                 linkedList.Remove(foundItem);
             }
         }
-        protected LinkedList<KeyValue<K, V>> GetLinkedList(int position) 
+        protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
         {
             LinkedList<KeyValue<K, V>> linkeList = items[position];
             if (linkeList == null)
@@ -74,6 +74,6 @@ namespace Collection
             }
             return linkeList;
         }
-             
+
     }
 }
