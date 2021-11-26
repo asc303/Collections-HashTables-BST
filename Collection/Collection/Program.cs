@@ -22,6 +22,8 @@ namespace Collection
             binarySearch.Insert(94);
             binarySearch.Display();
             binarySearch.GetSize();
+            bool result = binarySearch.IfExists(57, binarySearch);
+            Console.WriteLine(result);
         }
     }
 }
