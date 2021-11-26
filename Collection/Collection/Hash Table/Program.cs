@@ -16,6 +16,9 @@ namespace Collection
             hash.Add("6", "Way");
             string hash6 = hash.Get("6");
             Console.WriteLine("6th Index Value: " + hash6);
+            hash.Remove("2"); 
+            string hash2 = hash.Get("2");
+            Console.WriteLine("2nd Index is: " + hash2);
         }
     }
 }
